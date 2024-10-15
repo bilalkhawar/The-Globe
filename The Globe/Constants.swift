@@ -9,6 +9,7 @@ import Foundation
 
 struct CustomText {
     static let isProtectedValue = "red"
+    static let appTitle = "The Globe"
     
     struct Error {
         static let invalidServerResponseTitle = "Invalid Server Response"
@@ -20,5 +21,18 @@ struct CustomText {
     
     struct Alert {
         static let okAction = "OK"
+        static let okActionComment = "OK Action"
     }
+}
+
+struct ReuseIdentifier {
+    static let articleTableViewCell = "ArticleTableViewCell"
+}
+
+struct NibName {
+    static let articleTableViewCell = "ArticleTableViewCell"
+}
+
+struct TableViewCellHeight {
+    static let homeArticles: CGFloat = 96
 }
