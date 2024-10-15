@@ -17,11 +17,22 @@ class HomeTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = CustomText.appTitle
+        configureRefreshControl()
         setupTableView()
         fetchArticles()
     }
     
     // MARK: - Private Methods
+    
+    func configureRefreshControl () {
+        refreshControl = UIRefreshControl()
+        refreshControl?.addTarget(self, action: #selector(handleRefreshControl), for: .valueChanged)
+        refreshControl?.beginRefreshing()
+    }
+        
+    @objc func handleRefreshControl() {
+        fetchArticles()
+    }
     
     private func setupTableView() {
         let nib = UINib.init(nibName: NibName.articleTableViewCell, bundle: nil)
@@ -36,6 +47,7 @@ class HomeTableViewController: UITableViewController {
                 let recommendations = try await requestResponse.fetchRecommendedArticles()
                 articles = recommendations.articles
                 self.tableView.reloadData()
+                self.refreshControl?.endRefreshing()
             } catch let error as ArticleFetchError {
                 let alert = UIAlertController(title: error.title(), message: error.message(), preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: NSLocalizedString(CustomText.Alert.okAction, comment: CustomText.Alert.okActionComment), style: .default, handler: { _ in
