@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Article: Decodable {
+struct Article: Codable {
     var title: String
     var isProtected: Bool
     var authors: [String]

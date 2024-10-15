@@ -48,14 +48,27 @@ class HomeTableViewController: UITableViewController {
                 articles = recommendations.articles
                 self.tableView.reloadData()
                 self.refreshControl?.endRefreshing()
-            } catch let error as ArticleFetchError {
-                let alert = UIAlertController(title: error.title(), message: error.message(), preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: NSLocalizedString(CustomText.Alert.okAction, comment: CustomText.Alert.okActionComment), style: .default, handler: { _ in
-                }))
-                self.present(alert, animated: true, completion: nil)
+            } catch {
+                if Storage.fileExists(File.articles, in: .documents) {
+                    let recommendations = Storage.retrieve(File.articles, from: .documents, as: Recommendations.self)
+                    articles = recommendations.articles
+                    self.tableView.reloadData()
+                    self.refreshControl?.endRefreshing()
+                } else if let error = error as? ArticleFetchError {
+                    showPrompt(withTitle: error.title(), andMessage: error.message())
+                } else {
+                    showPrompt(withTitle: CustomText.Error.networkErrorTitle, andMessage: CustomText.Error.networkErrorMessage)
+                }
 
             }
         }
+    }
+    
+    private func showPrompt(withTitle title: String, andMessage message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString(CustomText.Alert.okAction, comment: CustomText.Alert.okActionComment), style: .default, handler: { _ in
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
 }
 

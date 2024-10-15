@@ -44,7 +44,9 @@ class RequestResponse {
         
         do {
             let decoder = JSONDecoder()
-            return try decoder.decode(Recommendations.self, from: data)
+            let albums = try decoder.decode(Recommendations.self, from: data)
+            Storage.store(albums, to: .documents, as: File.articles)
+            return albums
         } catch {
             throw ArticleFetchError.decodingError
         }

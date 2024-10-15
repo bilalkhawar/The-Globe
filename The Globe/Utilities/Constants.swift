@@ -17,6 +17,9 @@ struct CustomText {
         
         static let decodingErrorTitle = "Decoding Error"
         static let decodingErrorMessage = "There was an issue reading the server response."
+        
+        static let networkErrorTitle = "Network Error"
+        static let networkErrorMessage = "There was an issue connecting to the server. Make sure that you are connected to the internet and try again."
     }
     
     struct Alert {
@@ -35,4 +38,8 @@ struct NibName {
 
 struct TableViewCellHeight {
     static let homeArticles: CGFloat = 96
+}
+
+struct File {
+    static let articles = "articles.json"
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Recommendations: Decodable {
+struct Recommendations: Codable {
     var articles: [Article]
     
     // Mapping property names to match the JSON keys
