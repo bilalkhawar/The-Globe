@@ -18,7 +18,7 @@
 		1B3EEA702CBE27C900168E8E /* Exceptions for "The Globe" folder in "The Globe" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Info.plist,
+				"Supporting Files/Info.plist",
 			);
 			target = 1B3EEA5A2CBE27C800168E8E /* The Globe */;
 		};
@@ -156,7 +156,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = LFW59DY95R;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "The Globe/Info.plist";
+				INFOPLIST_FILE = "The Globe/Supporting Files/Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.news";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -184,7 +184,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = LFW59DY95R;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "The Globe/Info.plist";
+				INFOPLIST_FILE = "The Globe/Supporting Files/Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.news";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
