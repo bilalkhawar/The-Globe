@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ArticleTableViewCell: UITableViewCell {
     
@@ -19,12 +20,21 @@ class ArticleTableViewCell: UITableViewCell {
     
     func configureCell(with article: Article) {
         headlineLabel.text = article.title
-        var authors = article.authors.joined(separator: ", ")
-        if let range = authors.range(of: ",", options: .backwards) {
-            authors = authors.replacingCharacters(in: range, with: " and")
+        
+        if article.authors.count == 0 {
+            authorLabel.isHidden = true
+        } else {
+            authorLabel.isHidden = false
+            var authors = article.authors.joined(separator: ", ")
+            if let range = authors.range(of: ",", options: .backwards) {
+                authors = authors.replacingCharacters(in: range, with: " and")
+            }
+            authorLabel.text = authors
         }
-        authorLabel.text = authors
-//        articleImageView.image = UIImage(named: article.imageURL)
+        
+        if let imageURL = URL(string: article.imageURL) {
+            articleImageView.sd_setImage(with: imageURL, placeholderImage: nil)
+        }
     }
     
 }
