@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeTableViewController.swift
 //  The Globe
 //
 //  Created by Bilal Khawar on 2024-10-15.
@@ -7,13 +7,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class HomeTableViewController: UITableViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
-
+    
 }
-
