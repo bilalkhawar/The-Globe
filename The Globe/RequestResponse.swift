@@ -7,18 +7,47 @@
 
 import Foundation
 
+enum ArticleFetchError: Error {
+    case invalidServerResponse
+    case decodingError
+}
+
+extension ArticleFetchError {
+    func title() -> String {
+        switch self {
+        case .invalidServerResponse:
+            return CustomText.Error.invalidServerResponseTitle
+        case .decodingError:
+            return CustomText.Error.decodingErrorTitle
+        }
+    }
+    
+    func message() -> String {
+        switch self {
+        case .invalidServerResponse:
+            return CustomText.Error.invalidServerResponseMessage
+        case .decodingError:
+            return CustomText.Error.decodingErrorTitle
+        }
+    }
+}
+
 class RequestResponse {
     
     func fetchRecommendedArticles() async throws -> Recommendations {
         let url = TheGlobeAPI.recommendationsURL()
         let (data, response) = try await  URLSession.shared.data(from: url)
         
-//        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-//            throw MyNetworkingError.invalidServerResponse
-//        }
+        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+            throw ArticleFetchError.invalidServerResponse
+        }
         
-        let decoder = JSONDecoder()
-        return try decoder.decode(Recommendations.self, from: data)
+        do {
+            let decoder = JSONDecoder()
+            return try decoder.decode(Recommendations.self, from: data)
+        } catch {
+            throw ArticleFetchError.decodingError
+        }
     }
     
 }
