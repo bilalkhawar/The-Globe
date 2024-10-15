@@ -29,7 +29,7 @@ class ArticleTableViewCell: UITableViewCell {
             if let range = authors.range(of: ",", options: .backwards) {
                 authors = authors.replacingCharacters(in: range, with: " and")
             }
-            authorLabel.text = authors
+            authorLabel.text = authors.uppercased()
         }
         
         if let imageURL = URL(string: article.imageURL) {
