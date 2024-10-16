@@ -5,7 +5,7 @@
 //  Created by Bilal Khawar on 2024-10-15.
 //
 
-import Foundation
+import UIKit
 
 struct CustomText {
     static let isProtectedValue = "red"
@@ -42,4 +42,18 @@ struct TableViewCellHeight {
 
 struct File {
     static let articles = "articles.json"
+}
+
+struct CustomFonts {
+    static let primaryTitle = UIFont.systemFont(ofSize: 20, weight: .semibold)
+    static let secondaryTitle = UIFont.systemFont(ofSize: 16, weight: .regular)
+}
+
+struct CustomColor {
+    static let text = UIColor.label
+    static let secondaryText = UIColor.secondaryLabel
+}
+
+struct CustomImage {
+    static let protectedArticle = UIImage(systemName: "xmark")?.withTintColor(.red)
 }

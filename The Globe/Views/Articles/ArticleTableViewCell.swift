@@ -16,10 +16,24 @@ class ArticleTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        authorLabel.font = CustomFonts.secondaryTitle
+        authorLabel.textColor = CustomColor.secondaryText
     }
     
     func configureCell(with article: Article) {
-        headlineLabel.text = article.title
+        let headline = article.title
+        let attributes: [NSAttributedString.Key : Any] = [
+            NSAttributedString.Key.foregroundColor: CustomColor.text,
+            NSAttributedString.Key.font: CustomFonts.primaryTitle
+        ]
+        let attributedString = NSMutableAttributedString(string: headline, attributes: attributes)
+        if article.isProtected {
+            let imageAttachment = NSTextAttachment()
+            attributedString.append(NSAttributedString(string: " "))
+            imageAttachment.image = CustomImage.protectedArticle
+            attributedString.append(NSAttributedString(attachment: imageAttachment))
+        }
+        headlineLabel.attributedText = attributedString
         
         if article.authors.count == 0 {
             authorLabel.isHidden = true
