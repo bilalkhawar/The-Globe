@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,7 +15,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		1B3EEA702CBE27C900168E8E /* Exceptions for "The Globe" folder in "The Globe" target */ = {
+		1B3EEA702CBE27C900168E8E /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				"Supporting Files/Info.plist",
@@ -25,14 +25,7 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		1B3EEA5D2CBE27C800168E8E /* The Globe */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				1B3EEA702CBE27C900168E8E /* Exceptions for "The Globe" folder in "The Globe" target */,
-			);
-			path = "The Globe";
-			sourceTree = "<group>";
-		};
+		1B3EEA5D2CBE27C800168E8E /* The Globe */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (1B3EEA702CBE27C900168E8E /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = "The Globe"; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +98,7 @@
 				};
 			};
 			buildConfigurationList = 1B3EEA562CBE27C800168E8E /* Build configuration list for PBXProject "The Globe" */;
+			compatibilityVersion = "Xcode 15.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -116,7 +110,6 @@
 			packageReferences = (
 				1B3A90C62CBEF5F200F3F71C /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
-			preferredProjectObjectVersion = 77;
 			productRefGroup = 1B3EEA5C2CBE27C800168E8E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -162,6 +155,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -190,6 +184,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
