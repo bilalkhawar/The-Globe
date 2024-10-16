@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B3A90C82CBEF5F200F3F71C /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 1B3A90C72CBEF5F200F3F71C /* SDWebImage */; };
 		1B3A917C2CC0068A00F3F71C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B3A91662CC0068A00F3F71C /* Assets.xcassets */; };
 		1B3A917E2CC0068A00F3F71C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B3A916D2CC0068A00F3F71C /* LaunchScreen.storyboard */; };
 		1B3A917F2CC0068A00F3F71C /* ArticleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B3A91732CC0068A00F3F71C /* ArticleTableViewCell.xib */; };
@@ -22,6 +21,7 @@
 		1B3A91882CC0068A00F3F71C /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3A91722CC0068A00F3F71C /* ArticleTableViewCell.swift */; };
 		1B3A91892CC0068A00F3F71C /* RequestResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3A91782CC0068A00F3F71C /* RequestResponse.swift */; };
 		1B3A918A2CC0068A00F3F71C /* TheGlobeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3A91792CC0068A00F3F71C /* TheGlobeAPI.swift */; };
+		791616FD2CC00F4E001011EA /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 791616FC2CC00F4E001011EA /* SDWebImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,7 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B3A90C82CBEF5F200F3F71C /* SDWebImage in Frameworks */,
+				791616FD2CC00F4E001011EA /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,7 +182,7 @@
 			);
 			name = "The Globe";
 			packageProductDependencies = (
-				1B3A90C72CBEF5F200F3F71C /* SDWebImage */,
+				791616FC2CC00F4E001011EA /* SDWebImage */,
 			);
 			productName = "The Globe";
 			productReference = 1B3EEA5B2CBE27C800168E8E /* The Globe.app */;
@@ -212,9 +212,8 @@
 				Base,
 			);
 			mainGroup = 1B3EEA522CBE27C800168E8E;
-			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				1B3A90C62CBEF5F200F3F71C /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				791616FB2CC00F4E001011EA /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 1B3EEA5C2CBE27C800168E8E /* Products */;
 			projectDirPath = "";
@@ -480,9 +479,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		1B3A90C62CBEF5F200F3F71C /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+		791616FB2CC00F4E001011EA /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 5.19.7;
@@ -491,9 +490,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		1B3A90C72CBEF5F200F3F71C /* SDWebImage */ = {
+		791616FC2CC00F4E001011EA /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1B3A90C62CBEF5F200F3F71C /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			package = 791616FB2CC00F4E001011EA /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
 		};
 /* End XCSwiftPackageProductDependency section */
